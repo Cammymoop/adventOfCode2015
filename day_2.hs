@@ -36,7 +36,6 @@ totalWrapping = combine surfaceArea extraWrapping
 -- part 2
 smallestPerimeter :: (Ord a, Num a) => [a] -> a
 smallestPerimeter = (*2) . minimum . (map sum) . interlaceXYZ
-    where interlace (x:y:z:_) = [[x, y], [y, z], [x, z]]
 
 bowLength :: (Num a) => [a] -> a
 bowLength = product -- Re-named for readability
