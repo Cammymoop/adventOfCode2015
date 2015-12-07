@@ -8,7 +8,7 @@ stringMD5 :: String -> String
 stringMD5 = show . md5 . BL.pack . encode
 
 md5StartsWith :: String -> String -> Bool
-md5StartsWith str = (.) (str==) $ (take 5) . stringMD5
+md5StartsWith str = (.) (str==) $ (take $ length str) . stringMD5
 
 -- part 1
 firstWith5z = firstInt $ md5StartsWith "00000"
