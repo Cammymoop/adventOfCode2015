@@ -4,7 +4,7 @@ countRepeatingChars :: (Integral a, Show a) => Char -> (Maybe Char, a, String) -
 countRepeatingChars c (Nothing, _, _)               = (Just c, 1, []) 
 countRepeatingChars c (Just curChar, curCount, str) = if c == curChar
                                                       then (Just curChar, succ curCount, str)
-                              else (Just c, 1, (show curCount) ++ curChar:str)
+                                                      else (Just c, 1, (show curCount) ++ curChar:str)
 
 finalPrepend :: (Integral a, Show a) => (Maybe Char, a, String) -> String
 finalPrepend (Just c, count, str) = (show count) ++ c:str
