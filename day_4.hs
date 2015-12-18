@@ -3,6 +3,8 @@ import qualified Data.ByteString.Lazy as BL
 import Data.Digest.Pure.MD5     -- pureMD5 package
 import Codec.Binary.UTF8.String -- uft8-string package
 
+input = "iwrupvqb"
+
 -- MD5 from a string
 stringMD5 :: String -> String
 stringMD5 = show . md5 . BL.pack . encode
@@ -22,5 +24,5 @@ firstInt testFunc str i = case testFunc (str ++ (show i)) of False -> firstInt t
 
 main :: IO ()
 main = do 
-  print $ firstWith5z "iwrupvqb" 1
-  print $ firstWith6z "iwrupvqb" 1
+  print $ firstWith5z input 1
+  print $ firstWith6z input 1
